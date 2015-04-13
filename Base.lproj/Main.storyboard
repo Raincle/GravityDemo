@@ -18,10 +18,23 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="loU-5u-y4G">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to Start" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1go-iK-awQ">
+                                        <rect key="frame" x="243" y="289" width="114" height="22"/>
+                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstItem="1go-iK-awQ" firstAttribute="centerY" secondItem="loU-5u-y4G" secondAttribute="centerY" id="azi-8x-hUn"/>
+                                    <constraint firstItem="1go-iK-awQ" firstAttribute="centerX" secondItem="loU-5u-y4G" secondAttribute="centerX" id="pvC-VA-uhd"/>
+                                </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="ufa-69-Lco" appends="YES" id="dKg-J3-WOd"/>
+                                    <outletCollection property="gestureRecognizers" destination="zbf-qo-rva" appends="YES" id="LIs-FV-2Ny"/>
                                 </connections>
                             </view>
                         </subviews>
@@ -35,6 +48,7 @@
                     </view>
                     <connections>
                         <outlet property="AnimationView" destination="loU-5u-y4G" id="mwh-qJ-3ce"/>
+                        <outlet property="startLabel" destination="1go-iK-awQ" id="vAX-MD-qQ7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -43,6 +57,11 @@
                         <action selector="dropGestrue:" destination="BYZ-38-t0r" id="67K-uT-pXm"/>
                     </connections>
                 </tapGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="zbf-qo-rva">
+                    <connections>
+                        <action selector="longPress:" destination="BYZ-38-t0r" id="KCq-32-j20"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
         </scene>
     </scenes>
